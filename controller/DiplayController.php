@@ -2,10 +2,12 @@
 
 require_once("vendor/autoload.php");
 
-
+/**
+ * Controller qui se charge d'ffiche la base de donnée en fonction des filtres et recherche
+ */
 class DisplayController
 {
-    //Affiche la base de donnée puis gestion des filtres et recherche
+    
     private $twig;
 
     public function __construct()
@@ -17,7 +19,9 @@ class DisplayController
 
     public function acceuil()
     {
-        echo $this->twig->render('display.html.twig');
+        echo $this->twig->render('display.html.twig', [
+            "Title" => "Acceuil"
+        ]);
     }
 }
 

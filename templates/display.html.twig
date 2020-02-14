@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Display</title>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Page Title</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='data.css'>
+        <script src='main.js'></script>
+    </head>
+    <body>
+        <h1 class="Recherche">
+            Zone de Recherche
+        </h1>
+        <div class="meridien">
+            <label for="Meridien">Méridien</label>
+            <select>
+                <option valeur="sans_reponse"> </option>
+                <option valeur="-QM">Yin Qiao Mai</option>
+                <option valeur="-WM">Yin Wei Mai</option>
+                <option valeur="+QM">Yang Qiao Mai</option>
+                <option valeur="+WM">Yang Mei Mai</option>
+                <option valeur="C">Coeur</option>
+                <option valeur="ChM">Chong Mai</option>
+                <option valeur="DaiM">Dai Mai</option>
+                <option valeur="DM">Du Mai</option>
+                <option valeur="E">Estomac</option>
+                <option valeur="F">Foie</option>
+                <option valeur="GI">Gros Intestin</option>
+                <option valeur="IG">Intestin Grêle</option>
+                <option valeur="MC">Protecteur du Coeur</option>
+                <option valeur="P">Poumon</option>
+                <option valeur="R">Rein</option>
+                <option valeur="RM">Ren Mai</option>
+                <option valeur="Rte">Rate Pancréas</option>
+                <option valeur="TR">Triple Réchauffeur</option>
+                <option valeur="V">Vessie</option>
+                <option valeur="VB">Vesicule Biliaire</option>
+            </select>
+        </div>
+        
+        <div class="Pathologie">
+            <label for="Pathologie">Pathologie</label>
+            <select>
+                <option valeur="meridien">Méridien </option>
+                <option valeur="organe">Organe / Vicère</option>
+                <option valeur="luo">Luo</option>
+                <option valeur="vaisseau">Merveilleux Vaisseaux</option>
+                <option valeur="jing">Jing Jin</option>
+            </select>
+        </div>
+        <div class = "caracteristiques">
+            <label for="Caractéristiques">Caractéristiques</label>
+            <select>
+                <option valeur="plein">plein</option>
+                <option valeur="vide">vide</option>
+                <option valeur="chaud">chaud</option>
+                <option valeur="froid">froid</option>
+                <option valeur="interne">interne</option>
+                <option valeur="externe">externe</option>
+            </select>
+        </div>
+        <div class="button">
+            <input type="submit" value="Recherche">
+        </div>
+        <div class="barre_recherche">
+            <label for="barre_recherche"><h2>Recherche par mots clés</h2> </label>
+            <input type="search" id="barre" >
+            <input type="submit" id="submit_2" value="Recherche">
+        </div>
+    </body>
+</html>

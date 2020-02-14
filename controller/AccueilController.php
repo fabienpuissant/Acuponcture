@@ -1,9 +1,10 @@
 <?php
 
 require_once("vendor/autoload.php");
+require_once('model/User.php');
 
 
-class AcceuilController
+class AccueilController
 {
     //Controlleur qui affiche la page d'acceuil
     private $twig;
@@ -16,9 +17,11 @@ class AcceuilController
         $this->twig = new \Twig\Environment($loader);
     }
 
-    public function acceuil()
+    public function accueil()
     {
-        echo $this->twig->render('acceuil.html.twig');
+        echo $this->twig->render('acceuil.html.twig', [
+            "Title" => "Accueil"
+        ]);
     }
 }
 

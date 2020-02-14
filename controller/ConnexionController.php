@@ -16,9 +16,17 @@ class ConnexionController
         $this->twig = new \Twig\Environment($loader);
     }
 
-    public function acceuil()
+    public function connexion()
     {
-        echo $this->twig->render('connexion.html.twig');
+        if(!empty($_POST)){
+            $user = new User();
+            $user->setUsername($_POST["Username"])->setPassword($_POST["Password"]);
+            var_dump($user->verifier());
+        }
+        
+        echo $this->twig->render('connexion.html.twig', [
+            "Title" => "Connexion"
+        ]);
     }
 }
 
