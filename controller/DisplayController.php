@@ -1,6 +1,8 @@
 <?php
 
 require_once("vendor/autoload.php");
+require_once('DisplayController.php');
+
 
 /**
  * Controller qui se charge d'ffiche la base de donnée en fonction des filtres et recherche

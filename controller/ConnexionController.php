@@ -1,6 +1,8 @@
 <?php
 
 require_once("vendor/autoload.php");
+require_once('DisplayController.php');
+
 
 
 class ConnexionController
@@ -21,12 +23,25 @@ class ConnexionController
         if(!empty($_POST)){
             $user = new User();
             $user->setUsername($_POST["Username"])->setPassword($_POST["Password"]);
-            var_dump($user->verifier());
+            if($user->verifier()){
+                $_SESSION['Connected'] = true;
+                $route = new DisplayController();
+                $route->acceuil();
+                return;
+            }
+            echo $this->twig->render('connexion.html.twig', [
+                "Title" => "Connexion",
+                'erreur' => 1
+            ]);
+            return;
         }
-        
+
         echo $this->twig->render('connexion.html.twig', [
-            "Title" => "Connexion"
+            "Title" => "Connexion",
+            'erreur' => 2
         ]);
+        
+  
     }
 }
 

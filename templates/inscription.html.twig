@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page COnnexion Acupuncture</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/connexion.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/menu.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/site.css'>
+
+    <link rel='stylesheet' type='text/css' media='print' href='css/impression_connexion.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+        
+        <ul>
+
+        <li><a href="index.php" class="lien">Accueil</a></li>
+        <li><a href="index.php?Display=true" class="lien">Données</a></li>
+        <li><a href="index.php?Info=true" class="lien">Informations</a></li>
+        <li><a href="index.php?Connexion=true" class="lien">Connexion</a></li>
+        <li><a href="index.php?Inscription=true" class="lien">Inscription</a></li>
+        <li><a href="index.php?Deco=true" class="lien">Déconnexion</a></li>
+
+
+        </ul>
+
+    {% if erreur == 0 %}
+        <div class = "alert alert-success">
+			<p class = "alert">Utilisateur inscrit</p>
+	    </div>
+    {% endif %}
+
+      {% if erreur == 2 %}
+        <div class = "alert alert-danger">
+			<p class = "alert">Username déja utilisé</p>
+	    </div>
+    {% endif %}
+
+
+    <div class = "container">
+
+    <div class = "row justify-content-center mb-4"><h1>Inscription</h1></div>
+
+
+    <form method = "POST">
+        <div class = "row justify-content-center mt-4">
+            <div class="center">
+                    <div class="form-group">       
+                        <label for="Usename">Email / Username   </label>
+                        <input type="text" name="Username" class = "form-control">
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class= "row justify-content-center">
+            <div class="form-group">
+                
+                    <label for="PassWord">Password</label>
+                    <input type="password" name="Password" class = "form-control">
+                </div>
+            
+        </div>
+        <div class="row justify-content-center">
+            <button type="submit" value="Inscription" class="btn btn-primary">Inscription</button>
+        </div>
+      </form>
+    </div>
+</body>
+</html>

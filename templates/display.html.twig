@@ -6,68 +6,146 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Page Title</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' href='data.css'>
-        <script src='main.js'></script>
+        <link rel='stylesheet' type='text/css' media='screen' href='css/data.css'>
+        <link rel='stylesheet' type='text/css' media='screen' href='css/site.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/menu.css'>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src='js/main.js'></script>
     </head>
     <body>
-        <h1 class="Recherche">
+
+            <ul>
+
+        <li><a href="index.php" class="lien">Accueil</a></li>
+        <li><a href="index.php?Display=true" class="lien">Données</a></li>
+        <li><a href="index.php?Info=true" class="lien">Informations</a></li>
+        <li><a href="index.php?Connexion=true" class="lien">Connexion</a></li>
+        <li><a href="index.php?Inscription=true" class="lien">Inscription</a></li>
+        <li><a href="index.php?Deco=true" class="lien">Déconnexion</a></li>
+
+
+        </ul>
+
+
+    <div class = "container">
+    <div class = "row">
+        <div class = "col-md-6">
+        <h1 class="Recherche mt-4 ml-4">
             Zone de Recherche
         </h1>
-        <div class="meridien">
-            <label for="Meridien">Méridien</label>
-            <select>
-                <option valeur="sans_reponse"> </option>
-                <option valeur="-QM">Yin Qiao Mai</option>
-                <option valeur="-WM">Yin Wei Mai</option>
-                <option valeur="+QM">Yang Qiao Mai</option>
-                <option valeur="+WM">Yang Mei Mai</option>
-                <option valeur="C">Coeur</option>
-                <option valeur="ChM">Chong Mai</option>
-                <option valeur="DaiM">Dai Mai</option>
-                <option valeur="DM">Du Mai</option>
-                <option valeur="E">Estomac</option>
-                <option valeur="F">Foie</option>
-                <option valeur="GI">Gros Intestin</option>
-                <option valeur="IG">Intestin Grêle</option>
-                <option valeur="MC">Protecteur du Coeur</option>
-                <option valeur="P">Poumon</option>
-                <option valeur="R">Rein</option>
-                <option valeur="RM">Ren Mai</option>
-                <option valeur="Rte">Rate Pancréas</option>
-                <option valeur="TR">Triple Réchauffeur</option>
-                <option valeur="V">Vessie</option>
-                <option valeur="VB">Vesicule Biliaire</option>
+        </div>
+        <div class = "col-md-6">
+            <div class = "container">
+                <div class = "row">
+                        
+                              <div class="col-md-6 mt-4">
+                                    <input type="search" class="form-control" placeholder="Mot clefs" id="Keyword">
+                                </div>
+                            <div class = "col-md-6">
+                                <button type="submit" id="submit_2" value="Recherche" class="btn btn-primary mt-4" onclick="Rechercher()">Recherche</button>
+                            </div>
+
+                </div>
+            </div>
+            
+        </div>  
+        </div>
+    </div>
+    </div>
+
+
+    <div class = "container" style = "margin-top:5vh;">
+        <div class ="form-group mt-4">Pour sélectionner plusieurs champs ou déselectionner, gardez la touche controle enfoncée</div>
+    </div>
+
+        <div class="meridien container mt-4" class="form-control">
+            <div class = "row">
+                <div class = "col-md-4">
+                <label for="Meridien">Méridien</label>
+                <select multiple class = "form-control selectInput" id = "MeridienInput">
+                    <option value="-QM">Yin Qiao Mai</option>
+                    <option value="-WM">Yin Wei Mai</option>
+                    <option value="+QM">Yang Qiao Mai</option>
+                    <option value="+WM">Yang Mei Mai</option>
+                    <option value="C">Coeur</option>
+                    <option value="ChM">Chong Mai</option>
+                    <option value="DaiM">Dai Mai</option>
+                    <option value="DM">Du Mai</option>
+                    <option value="E">Estomac</option>
+                    <option value="F">Foie</option>
+                    <option value="GI">Gros Intestin</option>
+                    <option value="IG">Intestin Grêle</option>
+                    <option value="MC">Protecteur du Coeur</option>
+                    <option value="P">Poumon</option>
+                    <option value="R">Rein</option>
+                    <option value="RM">Ren Mai</option>
+                    <option value="Rte">Rate Pancréas</option>
+                    <option value="TR">Triple Réchauffeur</option>
+                    <option value="V">Vessie</option>
+                    <option value="VB">Vesicule Biliaire</option>
+                </select>
+            </div>
+         <div class = "col-md-4">
+            <div class="Pathologie container form-group">
+            <label for="Pathologie">Pathologie</label>
+            <select multiple class = "form-control selectInput" id = "PathoInput">
+                <option value="m">Méridien </option>
+                <option value="tf">Organe / Vicère</option>
+                <option value="l">Luo</option>
+                <option value="mv">Merveilleux Vaisseaux</option>
+                <option value="j">Jing Jin</option>
             </select>
+        </div>
+    </div>
+
+    <div class = "col-md-4">
+     <div class = "caracteristiques form-group">
+            <label for="Caractéristiques">Caractéristiques</label>
+            <select multiple class="form-control selectInput" id="CaraInput">
+                <option value="plein">plein</option>
+                <option value="vide">vide</option>
+                <option value="chaud">chaud</option>
+                <option value="froid">froid</option>
+                <option value="interne">interne</option>
+                <option value="externe">externe</option>
+            </select>
+        </div>
+    </div>
+
+
+
+</div>
+        
+
+       
+        <button class="btn btn-primary" value = "Rechercher" type = "submit" onclick="Filtrer()" style="margin-top:5vh;margin-bottom:5vh;">
+        Rechercher
+        </button>
+
+
+        <div class = "container mt-4">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Meridien</th>
+                    <th scope="col">Pathologie</th>
+                    <th scope="col">Description Pathologie</th>
+                    <th scope="col">Description symptome</th>
+                    </tr>
+                </thead>
+                <tbody id = "tableToDisplay">
+                  
+                </tbody>
+                </table>
+
+            <div class = "container" id="noResults">
+
+            </div>
+
         </div>
         
-        <div class="Pathologie">
-            <label for="Pathologie">Pathologie</label>
-            <select>
-                <option valeur="meridien">Méridien </option>
-                <option valeur="organe">Organe / Vicère</option>
-                <option valeur="luo">Luo</option>
-                <option valeur="vaisseau">Merveilleux Vaisseaux</option>
-                <option valeur="jing">Jing Jin</option>
-            </select>
-        </div>
-        <div class = "caracteristiques">
-            <label for="Caractéristiques">Caractéristiques</label>
-            <select>
-                <option valeur="plein">plein</option>
-                <option valeur="vide">vide</option>
-                <option valeur="chaud">chaud</option>
-                <option valeur="froid">froid</option>
-                <option valeur="interne">interne</option>
-                <option valeur="externe">externe</option>
-            </select>
-        </div>
-        <div class="button">
-            <input type="submit" value="Recherche">
-        </div>
-        <div class="barre_recherche">
-            <label for="barre_recherche"><h2>Recherche par mots clés</h2> </label>
-            <input type="search" id="barre" >
-            <input type="submit" id="submit_2" value="Recherche">
-        </div>
     </body>
 </html>

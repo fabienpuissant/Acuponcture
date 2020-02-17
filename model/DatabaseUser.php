@@ -47,16 +47,30 @@ class DatabaseUser extends Database
      * @param string password
      */
     public function check_password($username, $password){
-        $column = 'Username';
-        $req = $this->_pdo->prepare('SELECT Username, Mdp FROM User WHERE '.$column.' = ?');
-        $req->execute(array(htmlentities($username)));
+      
+        $req = $this->getUsername($username);
         while($user_row = $req->fetch()){
             if(password_verify($password, $user_row['Mdp'])){
                 return true;
             }
         } 
         return false;
-    }   
+    }  
+    
+    
+    public function checkUser($username, $password){
+        $req = $this->getUsername($username);
+        while($user_row = $req->fetch()){
+            return true;
+        } 
+        return false;
+    }
+
+    private function getUsername($username){
+        $req = $this->_pdo->prepare('SELECT Username, Mdp FROM User WHERE Username = ?');
+        $req->execute(array(htmlentities($username)));
+        return $req;
+    }
     
 
 }

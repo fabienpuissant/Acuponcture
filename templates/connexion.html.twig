@@ -1,29 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Connexion</title>
-        <meta charset='utf-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Page Title</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' href='connexion.css'>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page COnnexion Acupuncture</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/connexion.css'>
+    <link rel='stylesheet' type='text/css' media='print' href='css/impression_connexion.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/menu.css'>
 
-        <script src='main.js'></script>
-    </head>
-    <body>
-        <div class="container mt-4">
-        <form action = "" method="post">
-            <div class="form-group">
-                <label for="Usename">Username</label>
-                <input type="text" name="Username" class = "form-control">
+    <script src='main.js'></script>
+</head>
+<body>
+
+        <ul>
+        <li><a href="index.php" class="lien">Accueil</a></li>
+        <li><a href="index.php?Display=true" class="lien">Données</a></li>
+        <li><a href="index.php?Info=true" class="lien">Informations</a></li>
+        <li><a href="index.php?Connexion=true" class="lien">Connexion</a></li>
+        <li><a href="index.php?Inscription=true" class="lien">Inscription</a></li>
+        <li><a href="index.php?Deco=true" class="lien">Déconnexion</a></li>
+
+
+        </ul>
+
+        {% if erreur == 1 %}
+        <div class = "alert alert-danger">
+			<p class = "alert">Identifiants incorrects</p>
+	    </div>
+        {% endif %}
+
+    <div class = "container">
+    
+    <div class = "row justify-content-center mb-4"><h1>Connexion</h1></div>
+
+    <form method = "POST">
+        <div class = "row justify-content-center mt-4">
+            <div class="center">
+                    <div class="form-group">       
+                        <label for="Usename">Email / Username   </label>
+                        <input type="text" name="Username" class = "form-control">
+                    </div>
+                
             </div>
+        </div>
+
+        <div class= "row justify-content-center">
             <div class="form-group">
+                
                     <label for="PassWord">Password</label>
                     <input type="password" name="Password" class = "form-control">
-            </div>
-            <button type = "submit" class="btn btn-primary">Connexion
-        </button>
+                </div>
+            
+        </div>
+        <div class="row justify-content-center">
+            <button type="submit" value="Connexion" class="btn btn-primary">Connexion</button>
+        </div>
         </form>
-    </body>
+    </div>
+</body>
 </html>
